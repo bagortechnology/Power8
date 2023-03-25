@@ -43,7 +43,7 @@ let createTasks = () => {
   <p>${data.description}</p>
 
   <span class="options">
-     <i data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+     <i onclick = "editTasks(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
      <i onclick ="deleteTasks(this)" class="fas fa-trash-alt"></i>
 </div>`;
   resetForm();
@@ -52,6 +52,13 @@ let createTasks = () => {
 let deleteTasks =(e) => {
   e.parentElement.parentElement.remove()
 };
+
+let editTasks = (e) => {
+  let selectedTask = e.parentElement.parentElement;
+  textInput.value = selectedTask.children[0].innerHTML;
+  dateInput.value = selectedTask.children[1].innerHTML;
+  textarea.value = selectedTask.children[2].innerHTML;
+}
 
 let resetForm = () => {
   textInput.value = "";
