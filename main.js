@@ -44,10 +44,14 @@ let createTasks = () => {
 
   <span class="options">
      <i class="fas fa-edit"></i>
-     <i class="fas fa-trash-alt"></i>
+     <i onclick ="deleteTasks(this)" class="fas fa-trash-alt"></i>
 </div>`;
   resetForm();
 }
+
+let deleteTasks =(e) => {
+  e.parentElement.parentElement.remove()
+};
 
 let resetForm = () => {
   textInput.value = "";
