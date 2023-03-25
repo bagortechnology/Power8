@@ -44,3 +44,9 @@ let createTasks = () => {
 </div>`;
   
 }
+
+let resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
+};
