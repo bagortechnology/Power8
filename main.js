@@ -43,7 +43,7 @@ let createTasks = () => {
   <p>${data.description}</p>
 
   <span class="options">
-     <i class="fas fa-edit"></i>
+     <i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#form"></i>
      <i onclick ="deleteTasks(this)" class="fas fa-trash-alt"></i>
 </div>`;
   resetForm();
