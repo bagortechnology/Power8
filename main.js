@@ -33,7 +33,7 @@ let acceptData = () => {
     text: textInput.value,
     date: dateInput.value,
     description: textarea.value,
-  })
+  });
 
   localStorage.setItem("data",data);
   console.log(data);
