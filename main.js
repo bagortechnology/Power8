@@ -12,10 +12,10 @@ form.addEventListener("Submit",(e) => {
 
 let formValidation = () => {
     if (input.value === "") {
-        msg.innerHTML = "Post cannot be blank";
-        console.log("failure");
+      msg.innerHTML = "Post cannot be blank";
+      console.log("failure");
     } else {
-        console.log("sucess");
-        msg.innerHTML = "";
+      console.log("successs");
+      msg.innerHTML = "";
     }
-};
+  };
