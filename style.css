@@ -1,0 +1,30 @@
+body{
+    font-family: sans-serif;
+    background-color: lightyellow;
+}
+
+.app {
+    width: 300px;
+    height: 500px;
+    border: 2px solid #00660a;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+#addNew {
+    display: flex;
+    background-color: #80fc2b;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fa-plus {
+    background-color: lightyellow;
+    padding: 5px;
+    border-radius: 3px;
+
+}
