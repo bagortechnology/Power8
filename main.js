@@ -26,12 +26,15 @@ let formValidation = () => {
   }
 }
 
-let data = {};
+let data = [];
 
 let acceptData = () => {
-  data["text"] = textInput.value;
-  data["date"] = dateInput.value;
-  data["description"] = textarea.value;
+  data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textarea.value,
+  })
+
   console.log(data);
   createTasks();
 };
@@ -58,7 +61,7 @@ let editTasks = (e) => {
   textInput.value = selectedTask.children[0].innerHTML;
   dateInput.value = selectedTask.children[1].innerHTML;
   textarea.value = selectedTask.children[2].innerHTML;
-  
+
   selectedTask.remove();
 }
 
