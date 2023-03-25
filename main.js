@@ -3,13 +3,15 @@ let textInput = document.getElementById("textInput");
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  formValidation();
 });
 
 let formValidation = () => {
   if(textInput.value === ""){
     console.log("failure");
     
-  } else {
+  } 
+  else {
     console.log("success");
   }
-};
+}
