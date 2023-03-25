@@ -35,6 +35,7 @@ let acceptData = () => {
     description: textarea.value,
   })
 
+  localStorage.setItem("data",data);
   console.log(data);
   createTasks();
 };
