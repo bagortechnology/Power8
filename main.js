@@ -10,7 +10,7 @@ form.addEventListener('submit', (e) => {
 let formValidation = () => {
   if(textInput.value === ""){
     console.log("failure");
-    msg.innerHTML = "Don't leave the task blank."
+    msg.innerHTML = "Don't leave the task blank.";
   } 
   else {
     console.log("success");
