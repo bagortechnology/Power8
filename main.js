@@ -25,4 +25,7 @@ let data = {};
 
 let acceptData = () => {
   data["text"] = textInput.value;
+  data["date"] = dateInput.value;
+  data["description"] = textarea.value;
+  console.log(data);
 };
