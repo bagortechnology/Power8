@@ -26,31 +26,44 @@ let formValidation = () => {
   }
 }
 
-let data = {};
+let data = [];
 
 let acceptData = () => {
-  data["text"] = textInput.value;
-  data["date"] = dateInput.value;
-  data["description"] = textarea.value;
-  console.log(data);
+  data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textarea.value,
+  });
+
+
+  localStorage.setItem("data",JSON.stringify(data));
+  console.log(data)
   createTasks();
 };
 
 let createTasks = () => {
-  tasks.innerHTML += `<div>
-  <span class="fw-bold">${data.text}</span>
-  <span class="small text-secondary">${data.date}</span>
-  <p>${data.description}</p>
+  tasks.innerHTML = "";
+  data.map((x,y)=>{
+    return(tasks.innerHTML += `
+    <div id="${y}">
+    <span class="fw-bold">${x.text}</span>
+    <span class="small text-secondary">${x.date}</span>
+    <p>${x.description}</p>
+  
+    <span class="options">
+       <i onclick = "editTasks(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+       <i onclick ="deleteTasks(this)" class="fas fa-trash-alt"></i>
+  </div>`
 
-  <span class="options">
-     <i onclick = "editTasks(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-     <i onclick ="deleteTasks(this)" class="fas fa-trash-alt"></i>
-</div>`;
+    );
+  })
+  
   resetForm();
 }
 
 let deleteTasks =(e) => {
   e.parentElement.parentElement.remove()
+  data.splice(e.parentElement.parentElement.id, 1);
 };
 
 let editTasks = (e) => {
@@ -67,3 +80,10 @@ let resetForm = () => {
   dateInput.value = "";
   textarea.value = "";
 };
+
+
+
+(()=>{
+  data = JSON.parse(localStorage.getItem("data"));
+  createTasks();
+})();
