@@ -73,6 +73,7 @@ let editTasks = (e) => {
   textarea.value = selectedTask.children[2].innerHTML;
   
   selectedTask.remove();
+  deleteTasks(e);
 }
 
 let resetForm = () => {
